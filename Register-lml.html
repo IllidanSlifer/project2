@@ -3,96 +3,99 @@
 
 <head>
 
-<title>
+  <title>
 
-Imail-Register
+    Imail-Register
 
-</title>
-<html>
-
-<h1 style="color: red;">Register</h1>
-<style type="text/css">
-h { 
-     }
-  </style>
-</html>
+  </title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+  <h1 style="color: red;">Register</h1>
+</head>
 <body>
-  
-  
-<img src="http://4.bp.blogspot.com/-L2XtsuHKp3k/Usko7CrHyVI/AAAAAAAAcCU/CzK8E4QuGKs/s1600/flecha_hacia_abajo.gif" width="50"> </img>
 
-  <img src="http://www.vipao.com.mx/web/images/stories/imagenesvipao/Servicios/correo.gif" width="200" align="right" > </img>
+  <div class="row">
+    <div class="col-lg-3">
+      <div class="container">
+        <img src="http://www.ricardotayar.com/wp-content/uploads/2012/09/email-animado.gif" class="img-responsive" alt="Cinque Terre" width="204"> 
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="form-group">
+        <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+        <div class="col-sm-10">
+          <input type="email" class="form-control" id="inputEmail3" placeholder="Email"><br>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+        <div class="col-sm-10">
+          <input type="password" class="form-control" id="inputPassword3" placeholder="Password"><br>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="inputName" class="col-sm-2 control-label">Name</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="inputName" placeholder="Name"><br>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="inputLastName" class="col-sm-2 control-label">LastName</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="inputLastName" placeholder="LastName"><br>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="inputMobile" class="col-sm-2 control-label">Mobile</label>
+        <div class="col-sm-10">
+          <input type="number" class="form-control" id="inputMobile" placeholder="Mobile"><br>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="inputBirthday" class="col-sm-2 control-label">Birthday</label>
+        <div class="col-sm-10">
+          <input type="date" class="form-control" id="inputBirthday" placeholder="Birthday"><br><br>
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <div class="radio">
+          <label>
+            <input type="radio" name="sex" id="sex1" value="Man">Man
+          </label>
+        </div>
+        <div class="radio">
+          <label>
+            <input type="radio" name="sex" id="sex2" value="Woman">Woman
+          </label>
+        </div>
+      </div>
+      <div class="checkbox">
+        <label>
+          <input type="checkbox" name="Gamer" value="Gamer"> Gamer<br>
+          <input type="checkbox" name="Futbol" value="Futbol"> Futbol<br>
+          <input type="checkbox" name="I accept the Terms of Service and Privacy Policy Of Kevin" value="I accept the Terms of Service and Privacy Policy Of Kevin">I accept the Terms of Service and Privacy Policy Of Kevin
+        </label>
+      </div>
+      <div class="form-group">
+       <input type="submit" name="Send" value="Send">
+       <input type="reset" value="Delete">
+       <input type="hidden" name="estado" value="1">
+     </div>  
 
-<img src="http://www.ricardotayar.com/wp-content/uploads/2012/09/email-animado.gif" align="left"  width="200"> </img>
-  <form action="" align="center" method="post">
-    <style type="text/css">
-  body {
-  padding-left: 1em;
-  padding-right: 1em;
-  padding-top: 1em;
-  background-color: #333A5D;
-  font-family: Georgia, "Cambria (Cuerpo)",
-        Times, serif;
-  color: black}
-  </style>
-    <fieldset>
-      <legend>
-        <h1>Personal Infomation</h1>
-      </legend>
-    <p>
-      <font color="red" size=5><label for="Name">Name: </label></font><br>
-              <input type="text" id="name" ><br>
-
-              <font color="blue"size=5><label for="Last Name">Last Name: </label></font><br>
-              <input type="text" id="Last Name"><br>
-
-              <font color="aqua"size=5><label for="Username">Username: </label></font><br>
-              <input type="text" id="Username"><br>
-
-              <font color="orange"size=5><label for="Password">Password: </label></font><br>
-              <input type="text" id="Password"><br>
-
-              <font color="black"size=5><label for="Confirm your Password">Confirm your Password: </label></font><br>
-              <input type="text" id="Confirm your Password"><br>
-
-              <font color="green"size=5><label for="Birthday">Birthday: </label></font><br>
-              <input type="text" id="Birthday"><br>
-
-              <font color="purple"size=5><label for="Mobile Phone">Mobile Phone: </label></font><br>
-              <input type="text" id="Mobile Phone"><br>
-
-              <font color="brown"size=5><label for="Your current Address">Your current Address: </label></font><br>
-              <input type="text" id="Your current Address"><br><br>
-
-            <select>
-                <option value="Costa Rica">Costa Rica</option>
-                <option value="United States">United States</option>
-                <option value="Japan">Japan</option>
-                <option value="New Zeeland">New Zeeland</option>
-            </select>    <br>
-
-
-    <input type="radio" name="sex" value="Man"> Man<br>
-    <input type="radio" name="sex" value="Woman"> Woman<br><br>
-    <input type="checkbox" name="Gamer" value="Gamer"> Gamer<br>
-    <input type="checkbox" name="Futbol" value="Futbol"> Futbol<br>
-    <input type="checkbox" name="I accept the Terms of Service and Privacy Policy Of Kevin" value="I accept the Terms of Service and Privacy Policy Of Kevin"> I accept the Terms of Service and Privacy Policy Of Kevin<br>
-    
-
-    </p>
- </form>
-<input type="submit" value="Save"> <input value="Reset" type="Reset"><br><br>
-
-<a href="file:///C:/Users/Estudiante.PSSC.000/Documents/html%20K2/project1/Login-lml.html" align="center"> <font size="5" COLOR="blue">Ready </font></a><br>
-
-</fieldset>
-<br>
-
-<img src="http://www.raptor13.com/characters/npcIllidan/images/portrait_character.gif" width="500" align="left" > </img>
-<img src="http://www.raptor13.com/characters/npcIllidan/images/portrait_character.gif" width="500" align="right" > </img>
-
+     <div class="btn-group">
+      <a href="Login-lml.html">
+        <button type="button" class="btn btn-primary">Log In</button>
+      </a>
+    </div>
+  </div>
+  <div class="col-sm-2">
+    <div class="container">
+      <img src="http://www.vipao.com.mx/web/images/stories/imagenesvipao/Servicios/correo.gif" class="img-responsive" alt="Cinque Terre" width="204" height="236"> 
+    </div>
+  </div>
+</div>
 </body>
 
-</head>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
 
 </html>
