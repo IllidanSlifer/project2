@@ -12,31 +12,36 @@
 
   <h1 style="color: red;">Main</h1>
 </head>
-
-
 <body>
-
-  <a href="Project-New.html"><font color="red" size=5>New</font></a>
-
-
-  <img src="http://www.chariotsatp.co.uk/graphics/outlook_animation_225.gif" width="100" align="right"> </img>
-  <img src="http://www.chariotsatp.co.uk/graphics/outlook_animation_225.gif" width="100" align="left"> </img>
-  <td><font color="red" size=7>Imail.com|</font></td>               
-
   <div class="container">
-    <div class="col-md-7">           
+    <div class="col-md-4"> 
+    <a href="Project2-New.html">
+        <input id="new" name="New" type="button" value="New" class="btn btn-primary"></a>
+  </div> 
+  <div class="col-md-5">
+  <button type="button" class="btn btn-primary disabled">Delete</button>
+  <button type="button" class="btn btn-primary disabled">View</button>
+  <button type="button" class="btn btn-primary disabled">Edit</button> 
+  </div> <br><br><br><br>
+
+    <div class="col-md-7">
+    <div class="input-group">           
       <table class="table table-striped">
         <thead>
           <tr>
-            <th>Name</th>
+
+
+      <span class="input-group-addon">
+        <input type="checkbox" >
+        <th>Name</th>
             <th>Email</th>
             <th>Date</th>
+      </span>
           </tr>
         </thead>
+      </div>
         <tbody>
-
           <tr>
-
             <td>Illidan </td> 
             <td>You are the best</td> 
             <td>29/10/2015</td>
@@ -49,17 +54,7 @@
         </tbody>
       </table>
     </div> 
-    <div class="col-md-1">
-      <table class="table table-striped">
-      <tbody>
-        <tr>
-          <td>
-            <a href="Project-Illidan.html"><input name="View" value="View"></input></a> Or 
-            <a href="edit.html"><input name="Edit" value="Edit"></input></a></td> 
-          </tr>
-          </tbody>
-        </table>
-      </div>
+    
     </div>
 
   </body>
@@ -67,3 +62,5 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
 
   </html>
+
+
