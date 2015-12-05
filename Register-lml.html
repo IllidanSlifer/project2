@@ -8,7 +8,10 @@
     Imail-Register
 
   </title>
+
+
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <h1 style="color: red;">Register</h1>
 </head>
 <body>
@@ -23,25 +26,25 @@
       <div class="form-group">
         <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
         <div class="col-sm-10">
-          <input type="email" class="form-control" id="inputEmail3" placeholder="Email"><br>
+          <input type="email" class="form-control" id="inputEmail3" placeholder="Email" required><br>
         </div>
       </div>
       <div class="form-group">
         <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
         <div class="col-sm-10">
-          <input type="password" class="form-control" id="inputPassword3" placeholder="Password"><br>
+          <input type="password" class="form-control" id="inputPassword3" placeholder="Password" required><br>
         </div>
       </div>
-      <div class="form-group">
+      <div class="form-group required">
         <label for="inputName" class="col-sm-2 control-label">Name</label>
         <div class="col-sm-10">
-          <input type="text" class="form-control" id="inputName" placeholder="Name"><br>
+          <input type="text" class="form-control" id="inputName" placeholder="Name" required="required"><br>
         </div>
       </div>
       <div class="form-group">
         <label for="inputLastName" class="col-sm-2 control-label">LastName</label>
         <div class="col-sm-10">
-          <input type="text" class="form-control" id="inputLastName" placeholder="LastName"><br>
+          <input type="text" class="form-control" id="inputLastName" placeholder="LastName" ><br>
         </div>
       </div>
       <div class="form-group">
@@ -58,35 +61,10 @@
       </div>
       
       <div class="form-group">
-        <div class="radio">
-          <label>
-            <input type="radio" name="sex" id="sex1" value="Man">Man
-          </label>
-        </div>
-        <div class="radio">
-          <label>
-            <input type="radio" name="sex" id="sex2" value="Woman">Woman
-          </label>
-        </div>
-      </div>
-      <div class="checkbox">
-        <label>
-          <input type="checkbox" name="Gamer" value="Gamer"> Gamer<br>
-          <input type="checkbox" name="Futbol" value="Futbol"> Futbol<br>
-          <input type="checkbox" name="I accept the Terms of Service and Privacy Policy Of Kevin" value="I accept the Terms of Service and Privacy Policy Of Kevin">I accept the Terms of Service and Privacy Policy Of Kevin
-        </label>
-      </div>
-      <div class="form-group">
-       <input type="submit" name="Send" value="Send">
+       <input type="button" onclick="saveToLocalStorage()" name="Save" value="Save">
        <input type="reset" value="Delete">
-       <input type="hidden" name="estado" value="1">
      </div>  
 
-     <div class="btn-group">
-      <a href="Login-lml.html">
-        <button type="button" class="btn btn-primary">Log In</button>
-      </a>
-    </div>
   </div>
   <div class="col-sm-2">
     <div class="container">
@@ -95,7 +73,7 @@
   </div>
 </div>
 </body>
-
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+<script type="text/javascript" src="application.js"></script>
+<scipt src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
 
 </html>
