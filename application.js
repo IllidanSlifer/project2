@@ -1,5 +1,3 @@
-
-
 var users = JSON.parse(localStorage.getItem('users'));
 var password = JSON.parse(localStorage.getItem('password'));
 
@@ -11,24 +9,56 @@ if (!users||(!password)) {
 function saveToLocalStorage() {
 	if (localStorage["users"]==undefined)
     localStorage.setItem("users","[]");
-	//var stock = JSON.parse(localStorage.users);
-	validarEmail
+	var stock = JSON.parse(localStorage.users);
+	if(validarEmail(document.getElementById("inputEmail3").value)){
 	var user = {
-		var validar = validarEmail(email);
+		
 		"email": document.getElementById("inputEmail3").value,
 		"password": document.getElementById("inputPassword3").value,
 		"name": document.getElementById("inputName").value,
 		"lastname": document.getElementById("inputLastName").value,
 		"mobile": document.getElementById("inputMobile").value,
 		"birthday": document.getElementById("inputBirthday").value
-	};
-	users.push(user);
+	}
+	}else{
+	   alert("Error: La dirección de correo es incorrecta.");
+	   	return false;
+	 	}
+	stock.push(user);
 
-	localStorage.setItem('users', JSON.stringify(users));
+	localStorage.setItem('users', JSON.stringify(stock));
  window.location.href = "Login-lml.html";
 }
 
+function saveToLocalStorageNew(){
+debugger;
+	if (localStorage["emails"]==undefined){
+    localStorage.setItem("emails","[]");
+	}
+	var stock = JSON.parse(localStorage.emails);
+	if(validarCorreo()==true){
 
+		}
+	else{
+	   	return false;
+	 	}
+	stock.push(correo);
+
+	localStorage.setItem('emails', JSON.stringify(stock));
+ window.location.href = "Project-Main.html";
+}
+
+function saveEmail(asunt, email){
+	emailAct = new Array();
+	var objEmail = {
+			Asunt: "",
+			Email: ""
+		};
+	objEmail.Asunt=asunt;
+	objEmail.Email=email;
+	emailAct.splice(0, 1, objEmail);
+	localStorage['emailAct']=JSON.stringify(userAct);
+};
 
 function loadUsers() {
 
@@ -46,20 +76,8 @@ function loadUsers() {
 
 }
 
-function datos(){
-debugger;
-	var datos=document.getElementById("inputEmail3").value;
-alert(datos);
-}
-function register(){
-	debugger;
-	var datos=document.getElementsByName("info").value;
-	alert(datos);
 
-}
-
-
-function login(){	
+function login(){
 	var user = document.getElementById('inputEmail3').value;
 	var pass = document.getElementById('inputPassword3').value;
 	if (user == '' || pass == '') {	
@@ -67,21 +85,38 @@ function login(){
 	}
 	 else {
 	 	var result = verificarUser(user, pass);
-	 	var validar = validarEmail(email);
-	 	if (result == true || validar==true) {
+	 	if(validarEmail(document.getElementById("inputEmail3").value)==true)
+	 	{
+	 		if (result == true) {
 	 		saveUser(user, pass);
 	 		alert("Welcome");
-	 		window.close();
-			window.open("Project-Main.html");
+			window.location = "Project-Main.html";
 			return;
-	 	}
+	 	}	
+	 	}else{
+	 		    alert("Error: La dirección de correo es incorrecta.");
+
+	 	}return false; 
+	 	
 
 	}	
 };
+
+function validarCorreo(){
+
+	if ((document.getElementById("asunt").value)==""||(document.getElementById("email").value)==""
+		||(document.getElementById("contenido").value)=="") {
+		return false;
+		
+	}else{
+		return true;
+	}
+}
+
 function validarEmail(email) {
-    expr = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-    if ( !expr.test(email) )
-        alert("Error: La dirección de correo " + email + " es incorrecta.");
+   if (email.includes("@")) {
+   		return true;
+   }return false;
 }
 var email = 'me@example.com';
 validarEmail(email);
@@ -103,11 +138,12 @@ function verificarUser(email, password){
 		
 			var listaC = JSON.parse(localStorage['users']);
 			for (var i = 0; i < listaC.length; i++) {
-				if (listaC[i].inputEmail3 ==email && listaC[i].inputPassword3 == password) {				
+				if (listaC[i].email ==email && listaC[i].password == password) {				
 					result =true;
 					return result;
 				}
-			}
+				
+			}return false;
 			return result;
 		
 	}
@@ -115,54 +151,3 @@ function verificarUser(email, password){
 		return result;
 	}
 };
-
-// var MYAPP = {
-// 	year: 2015,
-// 	month: 'feb',
-// 	Client: function (firstName, lastName) {
-// 	  this.firstName = firstName;
-// 	  this.lastName = lastName;
-
-// 	  this.save = function() {
-// 	  	//insert into 
-// 	  	console.log('Saving user', this.firstName, this.lastName);
-// 	  	// save to localstorage
-// 	  };
-// 	},
-// 	validateUser: function() {
-// 		var year = 2020;
-
-
-// 		var username = $('#username').val();
-// 		var password = $('#password').val();
-// 		debugger;
-// 		var errorElement = jQuery('#error_msg');
-
-// 		if (username == 'admin' && password == 'password') {
-// 			console.log('logged in')
-// 			errorElement.hide();
-// 		} else {
-// 			errorElement.html('Username or Password invalid').addClass('error').show();
-// 		}	
-// 	},
-// 	saveClient: function() {
-// 		var firstName = document.getElementById('firstName').value;
-// 		var lastName = document.getElementById('lastName').value;
-
-// 		var client1 = new MYAPP.Client(firstName, lastName);
-// 		client1.save();
-// 	},
-// 	bindEvents: function() {
-// 		//jQuery('#login-button').click(MYAPP.validateUser);
-
-// 		jQuery('#save-client').bind('click',function(){
-// 			MYAPP.saveClient();
-// 		});
-
-
-// 	},
-// };
-
-// jQuery(document).ready( function() {
-// 	MYAPP.bindEvents();
-// });
