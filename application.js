@@ -6,13 +6,14 @@ if (!users||(!password)) {
 	password=["inputPassword3"];
 
 }
+//guarda el registro
 function saveToLocalStorage() {
 	if (localStorage["users"]==undefined)
     localStorage.setItem("users","[]");
 	var stock = JSON.parse(localStorage.users);
 	if(validarEmail(document.getElementById("inputEmail3").value)){
 	var user = {
-		
+
 		"email": document.getElementById("inputEmail3").value,
 		"password": document.getElementById("inputPassword3").value,
 		"name": document.getElementById("inputName").value,
@@ -30,57 +31,67 @@ function saveToLocalStorage() {
  window.location.href = "Login-lml.html";
 }
 
+
+//guardar el correo
 function saveToLocalStorageNew(){
-debugger;
+
 	if (localStorage["emails"]==undefined){
     localStorage.setItem("emails","[]");
 	}
 	var stock = JSON.parse(localStorage.emails);
-	if(validarCorreo()==true){
 
+	if(validarCorreo()==true){
+			var newemail = {
+
+				"asunt": document.getElementById("asunt").value,
+				"email": document.getElementById("email").value,
+				"message": document.getElementById("contenido").value
+		}
 		}
 	else{
 	   	return false;
 	 	}
-	stock.push(correo);
+	stock.push(newemail);
 
 	localStorage.setItem('emails', JSON.stringify(stock));
  window.location.href = "Project-Main.html";
 }
 
-function saveEmail(asunt, email){
-	emailAct = new Array();
-	var objEmail = {
-			Asunt: "",
-			Email: ""
-		};
-	objEmail.Asunt=asunt;
-	objEmail.Email=email;
-	emailAct.splice(0, 1, objEmail);
-	localStorage['emailAct']=JSON.stringify(userAct);
-};
 
-function loadUsers() {
+function validarCorreo(){
 
-	// read users from localstorage
-	// loop users
-	var user_html = "";
-	for (var i = 0; i < users.length; i++) {
-		// add users to the table
-		var u = users[i];
-		user_html = user_html + "<tr><td>"+"<button>click</button>"+"</td><td>"+
-		u.password+"</td></tr>";
+	if ((document.getElementById("asunt").value)==""||(document.getElementById("email").value)==""
+		||(document.getElementById("contenido").value)=="") {
+		return false;
+
+	}else{
+		return true;
 	}
-
-	$('#users_table').html(user_html);
-
 }
+
+	function saveEmail(){
+		var stock = [];
+			var asunt	=document.getElementById("asunt").value;
+			var email	= document.getElementById("email").value;
+			var messsaje=document.getElementById("contenido").value;
+		emailAct = new Array();
+		var objEmail = {
+				"Asunt": asunt,
+				"Email":email,
+				"Contenido":messsaje,
+			};
+
+			stock.push(objEmail);
+
+			localStorage.setItem('emails', JSON.stringify(stock));
+
+	};
 
 
 function login(){
 	var user = document.getElementById('inputEmail3').value;
 	var pass = document.getElementById('inputPassword3').value;
-	if (user == '' || pass == '') {	
+	if (user == '' || pass == '') {
 			return;
 	}
 	 else {
@@ -92,34 +103,23 @@ function login(){
 	 		alert("Welcome");
 			window.location = "Project-Main.html";
 			return;
-	 	}	
+	 	}
 	 	}else{
 	 		    alert("Error: La dirección de correo es incorrecta.");
 
-	 	}return false; 
-	 	
+	 	}return false;
 
-	}	
+
+	}
 };
 
-function validarCorreo(){
 
-	if ((document.getElementById("asunt").value)==""||(document.getElementById("email").value)==""
-		||(document.getElementById("contenido").value)=="") {
-		return false;
-		
-	}else{
-		return true;
-	}
-}
 
 function validarEmail(email) {
    if (email.includes("@")) {
    		return true;
    }return false;
 }
-var email = 'me@example.com';
-validarEmail(email);
 
 function saveUser(email, password){
 	userAct = new Array();
@@ -134,18 +134,18 @@ function saveUser(email, password){
 };
 function verificarUser(email, password){
 	var result = true;
-	if (localStorage.getItem('users')) {		
-		
+	if (localStorage.getItem('users')) {
+
 			var listaC = JSON.parse(localStorage['users']);
 			for (var i = 0; i < listaC.length; i++) {
-				if (listaC[i].email ==email && listaC[i].password == password) {				
+				if (listaC[i].email ==email && listaC[i].password == password) {
 					result =true;
 					return result;
 				}
-				
+
 			}return false;
 			return result;
-		
+
 	}
 	else{
 		return result;
