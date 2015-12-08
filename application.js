@@ -1,5 +1,6 @@
 var users = JSON.parse(localStorage.getItem('users'));
 var password = JSON.parse(localStorage.getItem('password'));
+var guardado = new Array();
 
 if (!users||(!password)) {
 	users = ["inputEmail3"];
@@ -34,12 +35,15 @@ function saveToLocalStorage() {
 
 //guardar el correo
 function saveToLocalStorageNew(){
-
+	debugger
 	if (localStorage["emails"]==undefined){
     localStorage.setItem("emails","[]");
 	}
-	var stock = JSON.parse(localStorage.emails);
-
+	if (JSON.parse(localStorage.getItem("guardado")) == null) {
+		var guardado = [];
+	}else{
+			var guardado = JSON.parse(localStorage.getItem("guardado"));
+	}
 	if(validarCorreo()==true){
 			var newemail = {
 
@@ -51,9 +55,10 @@ function saveToLocalStorageNew(){
 	else{
 	   	return false;
 	 	}
-	stock.push(newemail);
+	guardado.push(newemail);
+	var cl = JSON.stringify(guardado);
+	localStorage.setItem("guardado", cl);
 
-	localStorage.setItem('emails', JSON.stringify(stock));
  window.location.href = "Project-Main.html";
 }
 
@@ -70,22 +75,22 @@ function validarCorreo(){
 }
 
 	function saveEmail(){
-		var stock = [];
-			var asunt	=document.getElementById("asunt").value;
-			var email	= document.getElementById("email").value;
-			var messsaje=document.getElementById("contenido").value;
-		emailAct = new Array();
-		var objEmail = {
-				"Asunt": asunt,
-				"Email":email,
-				"Contenido":messsaje,
-			};
+		debugger
+		var guardado = JSON.parse(localStorage.getItem("guardado"));
+		var table = document.getElementById("tblMail");
+		for(i in guardado){
+			var row = table.insertRow(1);
+			var cell1 = row.insertCell(0);
+			var cell2 = row.insertCell(1);
+			var cell3 = row.insertCell(2);
+			var cell4 = row.insertCell(3);
+			cell1.innerHTML = guardado[i].asunt;
+			cell2.innerHTML = guardado[i].email;
+			$("<td />").html('<input type="checkbox"/>').appendTo(cell4);
+			
+		}
+	}
 
-			stock.push(objEmail);
-
-			localStorage.setItem('emails', JSON.stringify(stock));
-
-	};
 
 
 function login(){
